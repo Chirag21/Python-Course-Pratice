@@ -19,6 +19,7 @@ def master_yoda(text):
     wordlist = text.split()
     reversed_wordlist = wordlist[::-1]
     return ' '.join(reversed_wordlist) 
+
 print(master_yoda('I am home'))
 print(master_yoda('We are ready'))
 

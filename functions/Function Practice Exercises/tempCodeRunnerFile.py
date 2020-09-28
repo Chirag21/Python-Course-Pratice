@@ -1,7 +1,37 @@
-def almost_there(n):
-    return abs(n-100) <= 10 or abs(n-200) <= 10
+def summer_69(arr):
+    flag = True
+    sum = 0
+    for num in arr:
+        if num==6:
+            flag = False
+        elif num==9:
+            flag = True
+            continue
+        if flag:
+            sum += num
+    return sum
 
-print(almost_there(90))
-print(almost_there(104))
-print(almost_there(150))
-print(almost_there(209))
+def summer69(arr):
+    flag= True
+    sum = 0
+    for num in arr:
+        while flag:
+            if num != 6:
+                sum += num
+                break
+            else:
+                flag = False
+            while not flag:
+                if num != 9:
+                    break
+                else:
+                    flag = True
+    return sum
+
+print(summer_69([1, 3, 5]))
+print(summer_69([4, 5, 6, 7, 8, 9]))
+print(summer_69([2, 1, 6, 9, 11]))
+
+print(summer69([1, 3, 5]))
+print(summer69([4, 5, 6, 7, 8, 9]))
+print(summer69([2, 1, 6, 9, 11]))
