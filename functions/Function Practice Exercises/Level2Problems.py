@@ -69,6 +69,28 @@ def summer_69(arr):
             sum += num
     return sum
 
+def summer69(arr):
+    total = 0
+    flag = True
+    for num in arr:
+        while flag:
+            if num != 6:
+                total += num
+                break
+            else:
+                flag = False
+        while not flag:
+            if num != 9:
+                break
+            else:
+                flag = True
+                break
+    return total
+
 print(summer_69([1, 3, 5]))
 print(summer_69([4, 5, 6, 7, 8, 9]))
 print(summer_69([2, 1, 6, 9, 11]))
+
+print(summer69([1, 3, 5]))
+print(summer69([4, 5, 6, 7, 8, 9]))
+print(summer69([2, 1, 6, 9, 11]))
