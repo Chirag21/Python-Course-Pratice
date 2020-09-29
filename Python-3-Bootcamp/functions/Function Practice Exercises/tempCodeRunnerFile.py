@@ -1,17 +1,9 @@
-def count_primes(num):
-    primes = [2]  # already added 2 to prime list. Can chack only for odd prime numbers then
-    x = 3
-    if num < 2:  # for the case of num = 0 or 1
-        return 0
-    while x <= num:
-        for y in primes:  # test all odd factors up to x-1   TRICK
-            if x%y == 0:
-                x += 2
-                break
-        else:
-            primes.append(x)
-            x += 2
-    print(primes)
-    return len(primes)
+def palindrome(s):
+    half_length = int(len(s)/2)
+    for i in range(0,half_length):
+        for j in range(len(s)-1,half_length+2,-1):
+            if s[i].lower() != s[j].lower():
+                return False
+    return True
 
-print(count_primes(100))
+print(palindrome('madam'))
