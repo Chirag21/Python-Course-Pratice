@@ -61,4 +61,4 @@ def print_big(letter):
     for pattern in alphabet[letter.upper()]:
         print(patterns[pattern])
 
-print_big('a')
+print_big('b')
